@@ -1,0 +1,1530 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.12">
+  <model name="biological_cockroach">
+    <link name="base_link">
+      <inertial>
+        <pose>-0.0093714109912652731 7.5253263763314928e-22 -0.00067193860003263281 0 0 0</pose>
+        <mass>0.00027479891608245049</mass>
+        <inertia>
+          <ixx>3.3431287185423232e-09</ixx>
+          <ixy>-1.9379623710602459e-27</ixy>
+          <ixz>8.2446498049327615e-10</ixz>
+          <iyy>4.1047167535687393e-08</iyy>
+          <iyz>-9.4674721263957029e-28</iyz>
+          <izz>4.2170264001285523e-08</izz>
+        </inertia>
+      </inertial>
+      <visual name="base_link_visual">
+        <pose>-0.012999999999999999 0 -0.00059999999999999995 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.032000000000000001 0.010500000000000001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.4375 0.149999991 0.0749999955 1</diffuse>
+          <ambient>0.4375 0.149999991 0.0749999955 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__head_visual_1">
+        <pose>0.0132 0 -0.00029999999999999997 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0045999999999999999 0.0030000000000000001 0.0014</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.0749999955 0.049999997 1</diffuse>
+          <ambient>0.3125 0.0749999955 0.049999997 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__left_antenna_visual_2">
+        <pose>0.014199922862692831 0.001 -0.020899999999858341 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.042000000000000003</length>
+            <radius>0.00012</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.0625 0.0374999978 0.0250000004 1</diffuse>
+          <ambient>0.0625 0.0374999978 0.0250000004 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__left_eye_visual_3">
+        <pose>0.0138 0.0011000000000000001 -9.9999999999999964e-05 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.00044999999999999999</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <diffuse>0.0125000002 0.0125000002 0.0125000002 1</diffuse>
+          <ambient>0.0125000002 0.0125000002 0.0125000002 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__right_antenna_visual_4">
+        <pose>0.014199922862692831 -0.001 -0.020899999999858341 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.042000000000000003</length>
+            <radius>0.00012</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.0625 0.0374999978 0.0250000004 1</diffuse>
+          <ambient>0.0625 0.0374999978 0.0250000004 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__right_eye_visual_5">
+        <pose>0.0138 -0.0011000000000000001 -9.9999999999999964e-05 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.00044999999999999999</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <diffuse>0.0125000002 0.0125000002 0.0125000002 1</diffuse>
+          <ambient>0.0125000002 0.0125000002 0.0125000002 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__left_cercus_visual_6">
+        <pose>-0.02899999173528852 0.0011999999999999999 0.001849999999984821 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0044999999999999997</length>
+            <radius>0.00029999999999999997</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.37500003 0.125 0.049999997 1</diffuse>
+          <ambient>0.37500003 0.125 0.049999997 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__pronotum_visual_7">
+        <pose>0.0070000000000000001 0 0.00020000000000000001 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.00080000000000000004</length>
+            <radius>0.0041999999999999997</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.6875 0.3125 0.099999994 1</diffuse>
+          <ambient>0.6875 0.3125 0.099999994 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__right_cercus_visual_8">
+        <pose>-0.02899999173528852 -0.0011999999999999999 0.001849999999984821 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0044999999999999997</length>
+            <radius>0.00029999999999999997</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0.37500003 0.125 0.049999997 1</diffuse>
+          <ambient>0.37500003 0.125 0.049999997 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_fore_coxa_joint" type="revolute">
+      <pose relative_to="base_link">0.002 0.0050000000000000001 -0.0011000000000000001 0 0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>left_fore_coxa</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_fore_coxa">
+      <pose relative_to="left_fore_coxa_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00150794769472 0 0 0 0 0</pose>
+        <mass>2.93395238775849e-06</mass>
+        <inertia>
+          <ixx>7.0414857306203747e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.5759185104362019e-12</iyy>
+          <iyz>0</iyz>
+          <izz>2.5759185104362019e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_fore_coxa_visual">
+        <pose>0.00175 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0035000000000000001 0.0011999999999999999 0.0011999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5625 0.149999991 0.0749999955 1</diffuse>
+          <ambient>0.5625 0.149999991 0.0749999955 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_fore_trochanter_joint" type="revolute">
+      <pose relative_to="left_fore_coxa">0.0035000000000000001 0 0 0 0 0</pose>
+      <parent>left_fore_coxa</parent>
+      <child>left_fore_trochanter</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_fore_trochanter">
+      <pose relative_to="left_fore_trochanter_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00040323690307300002 0 0 0 0 0</pose>
+        <mass>5.4483445297399884e-07</mass>
+        <inertia>
+          <ixx>9.0805742162333138e-14</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.4932898432339875e-14</iyy>
+          <iyz>0</iyz>
+          <izz>7.4932898432339875e-14</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_fore_trochanter_visual">
+        <pose>0.00050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.75000006 0.25 0.0625 1</diffuse>
+          <ambient>0.75000006 0.25 0.0625 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_fore_femur_joint" type="revolute">
+      <pose relative_to="left_fore_trochanter">0.001 0 0 0 0.65000000000000002 0</pose>
+      <parent>left_fore_trochanter</parent>
+      <child>left_fore_femur</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_fore_femur">
+      <pose relative_to="left_fore_femur_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00165227116419 0 0 0 0 0</pose>
+        <mass>5.0230573153074531e-06</mass>
+        <inertia>
+          <ixx>1.8836464932402949e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.5128054035453353e-12</iyy>
+          <iyz>0</iyz>
+          <izz>5.5128054035453353e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_fore_femur_visual">
+        <pose>0.002 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0040000000000000001 0.0015 0.0015</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.81249994 0.3125 0.099999994 1</diffuse>
+          <ambient>0.81249994 0.3125 0.099999994 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_fore_tibia_joint" type="revolute">
+      <pose relative_to="left_fore_femur">0.0040000000000000001 0 0 0 0.65000000000000002 0</pose>
+      <parent>left_fore_femur</parent>
+      <child>left_fore_tibia</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.8</lower>
+          <upper>1.8</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_fore_tibia">
+      <pose relative_to="left_fore_tibia_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00142182980697 0 0 0 0 0</pose>
+        <mass>1.2295094766603489e-06</mass>
+        <inertia>
+          <ixx>1.3114767751043729e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.9409929142845752e-13</iyy>
+          <iyz>0</iyz>
+          <izz>8.9409929142845752e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_fore_tibia_visual">
+        <pose>0.0019 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0038 0.00080000000000000004 0.00080000000000000004</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.4375 0.149999991 0.049999997 1</diffuse>
+          <ambient>0.4375 0.149999991 0.049999997 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_fore_tarsus_joint" type="revolute">
+      <pose relative_to="left_fore_tibia">0.0038 0 0 0 -0.90000000000000002 0</pose>
+      <parent>left_fore_tibia</parent>
+      <child>left_fore_tarsus</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_fore_tarsus">
+      <pose relative_to="left_fore_tarsus_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0010356157588599999 0 0 0 0 0</pose>
+        <mass>5.0373884637322911e-07</mass>
+        <inertia>
+          <ixx>3.0224330782393741e-14</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.951988029694875e-13</iyy>
+          <iyz>0</iyz>
+          <izz>1.951988029694875e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_fore_tarsus_visual">
+        <pose>0.00125 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0025000000000000001 0.00059999999999999995 0.00059999999999999995</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.25 0.099999994 0.0374999978 1</diffuse>
+          <ambient>0.25 0.099999994 0.0374999978 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_hind_coxa_joint" type="revolute">
+      <pose relative_to="base_link">-0.01265 0.0050000000000000001 -0.0011000000000000001 0 0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>left_hind_coxa</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_hind_coxa">
+      <pose relative_to="left_hind_coxa_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0025850531909399998 0 0 0 0 0</pose>
+        <mass>5.0296326647288397e-06</mass>
+        <inertia>
+          <ixx>1.207111839534921e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.1807062680432631e-11</iyy>
+          <iyz>0</iyz>
+          <izz>1.1807062680432631e-11</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_hind_coxa_visual">
+        <pose>0.0030000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000000000001 0.0011999999999999999 0.0011999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5625 0.149999991 0.0749999955 1</diffuse>
+          <ambient>0.5625 0.149999991 0.0749999955 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_hind_trochanter_joint" type="revolute">
+      <pose relative_to="left_hind_coxa">0.0060000000000000001 0 0 0 0 0</pose>
+      <parent>left_hind_coxa</parent>
+      <child>left_hind_trochanter</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_hind_trochanter">
+      <pose relative_to="left_hind_trochanter_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00060485535460999996 0 0 0 0 0</pose>
+        <mass>8.1725167946167366e-07</mass>
+        <inertia>
+          <ixx>1.3620861324361231e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.677681489322632e-13</iyy>
+          <iyz>0</iyz>
+          <izz>1.677681489322632e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_hind_trochanter_visual">
+        <pose>0.00075000000000000002 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0015 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.75000006 0.25 0.0625 1</diffuse>
+          <ambient>0.75000006 0.25 0.0625 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_hind_femur_joint" type="revolute">
+      <pose relative_to="left_hind_trochanter">0.0015 0 0 0 0.65000000000000002 0</pose>
+      <parent>left_hind_trochanter</parent>
+      <child>left_hind_femur</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_hind_femur">
+      <pose relative_to="left_hind_femur_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0062599420923799996 0 0 0 0 0</pose>
+        <mass>1.9030803540132571e-05</mass>
+        <inertia>
+          <ixx>7.1365513275497126e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.5215418215729589e-10</iyy>
+          <iyz>0</iyz>
+          <izz>2.5215418215729589e-10</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_hind_femur_visual">
+        <pose>0.0064999999999999997 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.012999999999999999 0.0015 0.0015</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.81249994 0.3125 0.099999994 1</diffuse>
+          <ambient>0.81249994 0.3125 0.099999994 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_hind_tibia_joint" type="revolute">
+      <pose relative_to="left_hind_femur">0.012999999999999999 0 0 0 0.65000000000000002 0</pose>
+      <parent>left_hind_femur</parent>
+      <child>left_hind_tibia</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.8</lower>
+          <upper>1.8</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_hind_tibia">
+      <pose relative_to="left_hind_tibia_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00706233362636 0 0 0 0 0</pose>
+        <mass>6.1070643464763523e-06</mass>
+        <inertia>
+          <ixx>6.5142019695747762e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.018588228980212e-10</iyy>
+          <iyz>0</iyz>
+          <izz>1.018588228980212e-10</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_hind_tibia_visual">
+        <pose>0.0072500000000000004 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.014500000000000001 0.00080000000000000004 0.00080000000000000004</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.4375 0.149999991 0.049999997 1</diffuse>
+          <ambient>0.4375 0.149999991 0.049999997 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_hind_tarsus_joint" type="revolute">
+      <pose relative_to="left_hind_tibia">0.014500000000000001 0 0 0 -0.90000000000000002 0</pose>
+      <parent>left_hind_tibia</parent>
+      <child>left_hind_tarsus</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_hind_tarsus">
+      <pose relative_to="left_hind_tarsus_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0036080205792099998 0 0 0 0 0</pose>
+        <mass>1.754994657731753e-06</mass>
+        <inertia>
+          <ixx>1.052996794639052e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.66804697068484e-12</iyy>
+          <iyz>0</iyz>
+          <izz>7.66804697068484e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_hind_tarsus_visual">
+        <pose>0.0037499999999999999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0074999999999999997 0.00059999999999999995 0.00059999999999999995</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.25 0.099999994 0.0374999978 1</diffuse>
+          <ambient>0.25 0.099999994 0.0374999978 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_middle_coxa_joint" type="revolute">
+      <pose relative_to="base_link">-0.0023 0.0050000000000000001 -0.0011000000000000001 0 0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>left_middle_coxa</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_middle_coxa">
+      <pose relative_to="left_middle_coxa_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0019387898932099999 0 0 0 0 0</pose>
+        <mass>3.77222449854663e-06</mass>
+        <inertia>
+          <ixx>9.053338796511909e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.1791463544812163e-12</iyy>
+          <iyz>0</iyz>
+          <izz>5.1791463544812163e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_middle_coxa_visual">
+        <pose>0.0022499999999999998 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0044999999999999997 0.0011999999999999999 0.0011999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5625 0.149999991 0.0749999955 1</diffuse>
+          <ambient>0.5625 0.149999991 0.0749999955 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_middle_trochanter_joint" type="revolute">
+      <pose relative_to="left_middle_coxa">0.0044999999999999997 0 0 0 0 0</pose>
+      <parent>left_middle_coxa</parent>
+      <child>left_middle_trochanter</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_middle_trochanter">
+      <pose relative_to="left_middle_trochanter_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00048388428368799998 0 0 0 0 0</pose>
+        <mass>6.5380134356866329e-07</mass>
+        <inertia>
+          <ixx>1.089668905947772e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.055113325601844e-13</iyy>
+          <iyz>0</iyz>
+          <izz>1.055113325601844e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_middle_trochanter_visual">
+        <pose>0.00059999999999999995 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0011999999999999999 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.75000006 0.25 0.0625 1</diffuse>
+          <ambient>0.75000006 0.25 0.0625 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_middle_femur_joint" type="revolute">
+      <pose relative_to="left_middle_trochanter">0.0011999999999999999 0 0 0 0.65000000000000002 0</pose>
+      <parent>left_middle_trochanter</parent>
+      <child>left_middle_femur</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_middle_femur">
+      <pose relative_to="left_middle_femur_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00354270818019 0 0 0 0 0</pose>
+        <mass>1.077016087082813e-05</mass>
+        <inertia>
+          <ixx>4.0388103265605494e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.707738286891806e-11</iyy>
+          <iyz>0</iyz>
+          <izz>4.707738286891806e-11</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_middle_femur_visual">
+        <pose>0.0037499999999999999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0074999999999999997 0.0015 0.0015</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.81249994 0.3125 0.099999994 1</diffuse>
+          <ambient>0.81249994 0.3125 0.099999994 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_middle_tibia_joint" type="revolute">
+      <pose relative_to="left_middle_femur">0.0074999999999999997 0 0 0 0.65000000000000002 0</pose>
+      <parent>left_middle_femur</parent>
+      <child>left_middle_tibia</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.8</lower>
+          <upper>1.8</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_middle_tibia">
+      <pose relative_to="left_middle_tibia_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0039038442591899998 0 0 0 0 0</pose>
+        <mass>3.3758003162783611e-06</mass>
+        <inertia>
+          <ixx>3.6008536706969188e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.732910829024098e-11</iyy>
+          <iyz>0</iyz>
+          <izz>1.732910829024098e-11</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_middle_tibia_visual">
+        <pose>0.0040000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0080000000000000002 0.00080000000000000004 0.00080000000000000004</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.4375 0.149999991 0.049999997 1</diffuse>
+          <ambient>0.4375 0.149999991 0.049999997 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="left_middle_tarsus_joint" type="revolute">
+      <pose relative_to="left_middle_tibia">0.0080000000000000002 0 0 0 -0.90000000000000002 0</pose>
+      <parent>left_middle_tibia</parent>
+      <child>left_middle_tarsus</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="left_middle_tarsus">
+      <pose relative_to="left_middle_tarsus_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0021662900313699999 0 0 0 0 0</pose>
+        <mass>1.0537155619482529e-06</mass>
+        <inertia>
+          <ixx>6.3222933716895173e-14</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.679907987040512e-12</iyy>
+          <iyz>0</iyz>
+          <izz>1.679907987040512e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="left_middle_tarsus_visual">
+        <pose>0.0022499999999999998 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0044999999999999997 0.00059999999999999995 0.00059999999999999995</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.25 0.099999994 0.0374999978 1</diffuse>
+          <ambient>0.25 0.099999994 0.0374999978 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_fore_coxa_joint" type="revolute">
+      <pose relative_to="base_link">0.002 -0.0050000000000000001 -0.0011000000000000001 0 0 -1.5708</pose>
+      <parent>base_link</parent>
+      <child>right_fore_coxa</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_fore_coxa">
+      <pose relative_to="right_fore_coxa_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00150794769472 0 0 0 0 0</pose>
+        <mass>2.93395238775849e-06</mass>
+        <inertia>
+          <ixx>7.0414857306203747e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.5759185104362019e-12</iyy>
+          <iyz>0</iyz>
+          <izz>2.5759185104362019e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_fore_coxa_visual">
+        <pose>0.00175 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0035000000000000001 0.0011999999999999999 0.0011999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5625 0.149999991 0.0749999955 1</diffuse>
+          <ambient>0.5625 0.149999991 0.0749999955 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_fore_trochanter_joint" type="revolute">
+      <pose relative_to="right_fore_coxa">0.0035000000000000001 0 0 0 0 0</pose>
+      <parent>right_fore_coxa</parent>
+      <child>right_fore_trochanter</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_fore_trochanter">
+      <pose relative_to="right_fore_trochanter_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00040323690307300002 0 0 0 0 0</pose>
+        <mass>5.4483445297399884e-07</mass>
+        <inertia>
+          <ixx>9.0805742162333138e-14</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.4932898432339875e-14</iyy>
+          <iyz>0</iyz>
+          <izz>7.4932898432339875e-14</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_fore_trochanter_visual">
+        <pose>0.00050000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.75000006 0.25 0.0625 1</diffuse>
+          <ambient>0.75000006 0.25 0.0625 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_fore_femur_joint" type="revolute">
+      <pose relative_to="right_fore_trochanter">0.001 0 0 0 0.65000000000000002 0</pose>
+      <parent>right_fore_trochanter</parent>
+      <child>right_fore_femur</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_fore_femur">
+      <pose relative_to="right_fore_femur_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00165227116419 0 0 0 0 0</pose>
+        <mass>5.0230573153074531e-06</mass>
+        <inertia>
+          <ixx>1.8836464932402949e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.5128054035453353e-12</iyy>
+          <iyz>0</iyz>
+          <izz>5.5128054035453353e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_fore_femur_visual">
+        <pose>0.002 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0040000000000000001 0.0015 0.0015</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.81249994 0.3125 0.099999994 1</diffuse>
+          <ambient>0.81249994 0.3125 0.099999994 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_fore_tibia_joint" type="revolute">
+      <pose relative_to="right_fore_femur">0.0040000000000000001 0 0 0 0.65000000000000002 0</pose>
+      <parent>right_fore_femur</parent>
+      <child>right_fore_tibia</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.8</lower>
+          <upper>1.8</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_fore_tibia">
+      <pose relative_to="right_fore_tibia_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00142182980697 0 0 0 0 0</pose>
+        <mass>1.2295094766603489e-06</mass>
+        <inertia>
+          <ixx>1.3114767751043729e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.9409929142845752e-13</iyy>
+          <iyz>0</iyz>
+          <izz>8.9409929142845752e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_fore_tibia_visual">
+        <pose>0.0019 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0038 0.00080000000000000004 0.00080000000000000004</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.4375 0.149999991 0.049999997 1</diffuse>
+          <ambient>0.4375 0.149999991 0.049999997 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_fore_tarsus_joint" type="revolute">
+      <pose relative_to="right_fore_tibia">0.0038 0 0 0 -0.90000000000000002 0</pose>
+      <parent>right_fore_tibia</parent>
+      <child>right_fore_tarsus</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_fore_tarsus">
+      <pose relative_to="right_fore_tarsus_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0010356157588599999 0 0 0 0 0</pose>
+        <mass>5.0373884637322911e-07</mass>
+        <inertia>
+          <ixx>3.0224330782393741e-14</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.951988029694875e-13</iyy>
+          <iyz>0</iyz>
+          <izz>1.951988029694875e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_fore_tarsus_visual">
+        <pose>0.00125 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0025000000000000001 0.00059999999999999995 0.00059999999999999995</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.25 0.099999994 0.0374999978 1</diffuse>
+          <ambient>0.25 0.099999994 0.0374999978 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_hind_coxa_joint" type="revolute">
+      <pose relative_to="base_link">-0.01265 -0.0050000000000000001 -0.0011000000000000001 0 0 -1.5708</pose>
+      <parent>base_link</parent>
+      <child>right_hind_coxa</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_hind_coxa">
+      <pose relative_to="right_hind_coxa_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0025850531909399998 0 0 0 0 0</pose>
+        <mass>5.0296326647288397e-06</mass>
+        <inertia>
+          <ixx>1.207111839534921e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.1807062680432631e-11</iyy>
+          <iyz>0</iyz>
+          <izz>1.1807062680432631e-11</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_hind_coxa_visual">
+        <pose>0.0030000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000000000001 0.0011999999999999999 0.0011999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5625 0.149999991 0.0749999955 1</diffuse>
+          <ambient>0.5625 0.149999991 0.0749999955 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_hind_trochanter_joint" type="revolute">
+      <pose relative_to="right_hind_coxa">0.0060000000000000001 0 0 0 0 0</pose>
+      <parent>right_hind_coxa</parent>
+      <child>right_hind_trochanter</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_hind_trochanter">
+      <pose relative_to="right_hind_trochanter_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00060485535460999996 0 0 0 0 0</pose>
+        <mass>8.1725167946167366e-07</mass>
+        <inertia>
+          <ixx>1.3620861324361231e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.677681489322632e-13</iyy>
+          <iyz>0</iyz>
+          <izz>1.677681489322632e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_hind_trochanter_visual">
+        <pose>0.00075000000000000002 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0015 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.75000006 0.25 0.0625 1</diffuse>
+          <ambient>0.75000006 0.25 0.0625 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_hind_femur_joint" type="revolute">
+      <pose relative_to="right_hind_trochanter">0.0015 0 0 0 0.65000000000000002 0</pose>
+      <parent>right_hind_trochanter</parent>
+      <child>right_hind_femur</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_hind_femur">
+      <pose relative_to="right_hind_femur_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0062599420923799996 0 0 0 0 0</pose>
+        <mass>1.9030803540132571e-05</mass>
+        <inertia>
+          <ixx>7.1365513275497126e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.5215418215729589e-10</iyy>
+          <iyz>0</iyz>
+          <izz>2.5215418215729589e-10</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_hind_femur_visual">
+        <pose>0.0064999999999999997 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.012999999999999999 0.0015 0.0015</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.81249994 0.3125 0.099999994 1</diffuse>
+          <ambient>0.81249994 0.3125 0.099999994 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_hind_tibia_joint" type="revolute">
+      <pose relative_to="right_hind_femur">0.012999999999999999 0 0 0 0.65000000000000002 0</pose>
+      <parent>right_hind_femur</parent>
+      <child>right_hind_tibia</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.8</lower>
+          <upper>1.8</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_hind_tibia">
+      <pose relative_to="right_hind_tibia_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00706233362636 0 0 0 0 0</pose>
+        <mass>6.1070643464763523e-06</mass>
+        <inertia>
+          <ixx>6.5142019695747762e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.018588228980212e-10</iyy>
+          <iyz>0</iyz>
+          <izz>1.018588228980212e-10</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_hind_tibia_visual">
+        <pose>0.0072500000000000004 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.014500000000000001 0.00080000000000000004 0.00080000000000000004</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.4375 0.149999991 0.049999997 1</diffuse>
+          <ambient>0.4375 0.149999991 0.049999997 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_hind_tarsus_joint" type="revolute">
+      <pose relative_to="right_hind_tibia">0.014500000000000001 0 0 0 -0.90000000000000002 0</pose>
+      <parent>right_hind_tibia</parent>
+      <child>right_hind_tarsus</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_hind_tarsus">
+      <pose relative_to="right_hind_tarsus_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0036080205792099998 0 0 0 0 0</pose>
+        <mass>1.754994657731753e-06</mass>
+        <inertia>
+          <ixx>1.052996794639052e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.66804697068484e-12</iyy>
+          <iyz>0</iyz>
+          <izz>7.66804697068484e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_hind_tarsus_visual">
+        <pose>0.0037499999999999999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0074999999999999997 0.00059999999999999995 0.00059999999999999995</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.25 0.099999994 0.0374999978 1</diffuse>
+          <ambient>0.25 0.099999994 0.0374999978 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_middle_coxa_joint" type="revolute">
+      <pose relative_to="base_link">-0.0023 -0.0050000000000000001 -0.0011000000000000001 0 0 -1.5708</pose>
+      <parent>base_link</parent>
+      <child>right_middle_coxa</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_middle_coxa">
+      <pose relative_to="right_middle_coxa_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0019387898932099999 0 0 0 0 0</pose>
+        <mass>3.77222449854663e-06</mass>
+        <inertia>
+          <ixx>9.053338796511909e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.1791463544812163e-12</iyy>
+          <iyz>0</iyz>
+          <izz>5.1791463544812163e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_middle_coxa_visual">
+        <pose>0.0022499999999999998 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0044999999999999997 0.0011999999999999999 0.0011999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5625 0.149999991 0.0749999955 1</diffuse>
+          <ambient>0.5625 0.149999991 0.0749999955 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_middle_trochanter_joint" type="revolute">
+      <pose relative_to="right_middle_coxa">0.0044999999999999997 0 0 0 0 0</pose>
+      <parent>right_middle_coxa</parent>
+      <child>right_middle_trochanter</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_middle_trochanter">
+      <pose relative_to="right_middle_trochanter_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00048388428368799998 0 0 0 0 0</pose>
+        <mass>6.5380134356866329e-07</mass>
+        <inertia>
+          <ixx>1.089668905947772e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.055113325601844e-13</iyy>
+          <iyz>0</iyz>
+          <izz>1.055113325601844e-13</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_middle_trochanter_visual">
+        <pose>0.00059999999999999995 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0011999999999999999 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.75000006 0.25 0.0625 1</diffuse>
+          <ambient>0.75000006 0.25 0.0625 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_middle_femur_joint" type="revolute">
+      <pose relative_to="right_middle_trochanter">0.0011999999999999999 0 0 0 0.65000000000000002 0</pose>
+      <parent>right_middle_trochanter</parent>
+      <child>right_middle_femur</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_middle_femur">
+      <pose relative_to="right_middle_femur_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00354270818019 0 0 0 0 0</pose>
+        <mass>1.077016087082813e-05</mass>
+        <inertia>
+          <ixx>4.0388103265605494e-12</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.707738286891806e-11</iyy>
+          <iyz>0</iyz>
+          <izz>4.707738286891806e-11</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_middle_femur_visual">
+        <pose>0.0037499999999999999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0074999999999999997 0.0015 0.0015</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.81249994 0.3125 0.099999994 1</diffuse>
+          <ambient>0.81249994 0.3125 0.099999994 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_middle_tibia_joint" type="revolute">
+      <pose relative_to="right_middle_femur">0.0074999999999999997 0 0 0 0.65000000000000002 0</pose>
+      <parent>right_middle_femur</parent>
+      <child>right_middle_tibia</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.8</lower>
+          <upper>1.8</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_middle_tibia">
+      <pose relative_to="right_middle_tibia_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0039038442591899998 0 0 0 0 0</pose>
+        <mass>3.3758003162783611e-06</mass>
+        <inertia>
+          <ixx>3.6008536706969188e-13</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.732910829024098e-11</iyy>
+          <iyz>0</iyz>
+          <izz>1.732910829024098e-11</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_middle_tibia_visual">
+        <pose>0.0040000000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0080000000000000002 0.00080000000000000004 0.00080000000000000004</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.4375 0.149999991 0.049999997 1</diffuse>
+          <ambient>0.4375 0.149999991 0.049999997 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="right_middle_tarsus_joint" type="revolute">
+      <pose relative_to="right_middle_tibia">0.0080000000000000002 0 0 0 -0.90000000000000002 0</pose>
+      <parent>right_middle_tibia</parent>
+      <child>right_middle_tarsus</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>1.2</upper>
+          <effort>1</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="right_middle_tarsus">
+      <pose relative_to="right_middle_tarsus_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0021662900313699999 0 0 0 0 0</pose>
+        <mass>1.0537155619482529e-06</mass>
+        <inertia>
+          <ixx>6.3222933716895173e-14</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.679907987040512e-12</iyy>
+          <iyz>0</iyz>
+          <izz>1.679907987040512e-12</izz>
+        </inertia>
+      </inertial>
+      <visual name="right_middle_tarsus_visual">
+        <pose>0.0022499999999999998 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0044999999999999997 0.00059999999999999995 0.00059999999999999995</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.25 0.099999994 0.0374999978 1</diffuse>
+          <ambient>0.25 0.099999994 0.0374999978 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name="left_antenna_fixed" attached_to="head">
+      <pose>0.001 0.001 0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name="left_antenna" attached_to="left_antenna_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="left_eye_fixed" attached_to="head">
+      <pose>0.00059999999999999995 0.0011000000000000001 0.00020000000000000001 0 0 0</pose>
+    </frame>
+    <frame name="left_eye" attached_to="left_eye_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="right_antenna_fixed" attached_to="head">
+      <pose>0.001 -0.001 0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name="right_antenna" attached_to="right_antenna_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="right_eye_fixed" attached_to="head">
+      <pose>0.00059999999999999995 -0.0011000000000000001 0.00020000000000000001 0 0 0</pose>
+    </frame>
+    <frame name="right_eye" attached_to="right_eye_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="head_fixed" attached_to="base_link">
+      <pose>0.0132 0 -0.00029999999999999997 0 0 0</pose>
+    </frame>
+    <frame name="head" attached_to="head_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="left_cercus_fixed" attached_to="base_link">
+      <pose>-0.029000000000000001 0.0011999999999999999 -0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name="left_cercus" attached_to="left_cercus_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="pronotum_fixed" attached_to="base_link">
+      <pose>0.0070000000000000001 0 0.00020000000000000001 0 0 0</pose>
+    </frame>
+    <frame name="pronotum" attached_to="pronotum_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="right_cercus_fixed" attached_to="base_link">
+      <pose>-0.029000000000000001 -0.0011999999999999999 -0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name="right_cercus" attached_to="right_cercus_fixed">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  <static>true</static></model>
+</sdf>

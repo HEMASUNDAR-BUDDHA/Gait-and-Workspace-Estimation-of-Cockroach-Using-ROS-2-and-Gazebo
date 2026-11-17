@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<robot name="biological_cockroach" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Main body -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="-0.013 0 -0.0006"/>
+      <geometry>
+        <box size="0.032 0.0105 0.001"/>
+      </geometry>
+      <material name="dark_brown">
+        <color rgba="0.35 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Pronotum -->
+  <link name="pronotum">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0042" length="0.0008"/>
+      </geometry>
+      <material name="pronotum_brown">
+        <color rgba="0.55 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="pronotum_fixed" type="fixed">
+    <parent link="base_link"/>
+    <child link="pronotum"/>
+    <origin xyz="0.007 0 0.0002"/>
+  </joint>
+
+  <!-- Head -->
+  <link name="head">
+    <visual>
+      <geometry>
+        <box size="0.0046 0.003 0.0014"/>
+      </geometry>
+      <material name="head_brown">
+        <color rgba="0.25 0.06 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="head_fixed" type="fixed">
+    <parent link="base_link"/>
+    <child link="head"/>
+    <origin xyz="0.0132 0 -0.0003"/>
+  </joint>
+
+  <!-- Eyes -->
+  <xacro:macro name="eye" params="name y">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <sphere radius="0.00045"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0.01 0.01 0.01 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${name}_fixed" type="fixed">
+      <parent link="head"/>
+      <child link="${name}"/>
+      <origin xyz="0.0006 ${y} 0.0002"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:eye name="left_eye" y="0.0011"/>
+  <xacro:eye name="right_eye" y="-0.0011"/>
+
+  <!-- Antennae -->
+  <xacro:macro name="antenna" params="name y">
+    <link name="${name}">
+      <visual>
+        <origin xyz="0.021 0 0"/>
+        <geometry>
+          <cylinder radius="0.00012" length="0.042"/>
+        </geometry>
+        <material name="antenna_black">
+          <color rgba="0.05 0.03 0.02 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${name}_fixed" type="fixed">
+      <parent link="head"/>
+      <child link="${name}"/>
+      <origin xyz="0.001 ${y} 0.0004" rpy="0 1.5708 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:antenna name="left_antenna" y="0.001"/>
+  <xacro:antenna name="right_antenna" y="-0.001"/>
+
+  <!-- Cerci -->
+  <xacro:macro name="cercus" params="name y">
+    <link name="${name}">
+      <visual>
+        <origin xyz="-0.00225 0 0"/>
+        <geometry>
+          <cylinder radius="0.0003" length="0.0045"/>
+        </geometry>
+        <material name="cerci_brown">
+          <color rgba="0.3 0.1 0.04 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${name}_fixed" type="fixed">
+      <parent link="base_link"/>
+      <child link="${name}"/>
+      <origin xyz="-0.029 ${y} -0.0004" rpy="0 1.5708 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:cercus name="left_cercus" y="0.0012"/>
+  <xacro:cercus name="right_cercus" y="-0.0012"/>
+
+  <!-- One leg: five anatomical segments and five revolute joints -->
+  <xacro:macro name="leg"
+      params="name x y side coxa trochanter femur tibia tarsus">
+
+    <link name="${name}_coxa">
+      <visual>
+        <origin xyz="${coxa/2} 0 0"/>
+        <geometry>
+          <box size="${coxa} 0.0012 0.0012"/>
+        </geometry>
+        <material name="coxa_material">
+          <color rgba="0.45 0.12 0.06 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${name}_coxa_joint" type="revolute">
+      <parent link="base_link"/>
+      <child link="${name}_coxa"/>
+      <origin xyz="${x} ${y} -0.0006"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+    </joint>
+
+    <link name="${name}_trochanter">
+      <visual>
+        <origin xyz="${trochanter/2} 0 0"/>
+        <geometry>
+          <box size="${trochanter} 0.001 0.001"/>
+        </geometry>
+        <material name="trochanter_material">
+          <color rgba="0.6 0.2 0.05 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${name}_trochanter_joint" type="revolute">
+      <parent link="${name}_coxa"/>
+      <child link="${name}_trochanter"/>
+      <origin xyz="${coxa} 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.0" upper="1.0" effort="1" velocity="2"/>
+    </joint>
+
+    <link name="${name}_femur">
+      <visual>
+        <origin xyz="${femur/2} 0 0"/>
+        <geometry>
+          <box size="${femur} 0.0015 0.0015"/>
+        </geometry>
+        <material name="femur_material">
+          <color rgba="0.65 0.25 0.08 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${name}_femur_joint" type="revolute">
+      <parent link="${name}_trochanter"/>
+      <child link="${name}_femur"/>
+      <origin xyz="${trochanter} 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-1.5" upper="1.5" effort="1" velocity="2"/>
+    </joint>
+
+    <link name="${name}_tibia">
+      <visual>
+        <origin xyz="${tibia/2} 0 0"/>
+        <geometry>
+          <box size="${tibia} 0.0008 0.0008"/>
+        </geometry>
+        <material name="tibia_material">
+          <color rgba="0.35 0.12 0.04 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${name}_tibia_joint" type="revolute">
+      <parent link="${name}_femur"/>
+      <child link="${name}_tibia"/>
+      <origin xyz="${femur} 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-1.8" upper="1.8" effort="1" velocity="2"/>
+    </joint>
+
+    <link name="${name}_tarsus">
+      <visual>
+        <origin xyz="${tarsus/2} 0 0"/>
+        <geometry>
+          <box size="${tarsus} 0.0006 0.0006"/>
+        </geometry>
+        <material name="tarsus_material">
+          <color rgba="0.2 0.08 0.03 1"/>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${name}_tarsus_joint" type="revolute">
+      <parent link="${name}_tibia"/>
+      <child link="${name}_tarsus"/>
+      <origin xyz="${tibia} 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+    </joint>
+
+  </xacro:macro>
+
+  <!-- Forelegs -->
+  <xacro:leg name="left_fore"
+      x="0.002" y="0.006" side="1"
+      coxa="0.0035" trochanter="0.001"
+      femur="0.004" tibia="0.0038" tarsus="0.0025"/>
+
+  <xacro:leg name="right_fore"
+      x="0.002" y="-0.006" side="-1"
+      coxa="0.0035" trochanter="0.001"
+      femur="0.004" tibia="0.0038" tarsus="0.0025"/>
+
+  <!-- Middle legs -->
+  <xacro:leg name="left_middle"
+      x="-0.0023" y="0.006" side="1"
+      coxa="0.0045" trochanter="0.0012"
+      femur="0.0075" tibia="0.008" tarsus="0.0045"/>
+
+  <xacro:leg name="right_middle"
+      x="-0.0023" y="-0.006" side="-1"
+      coxa="0.0045" trochanter="0.0012"
+      femur="0.0075" tibia="0.008" tarsus="0.0045"/>
+
+  <!-- Hindlegs -->
+  <xacro:leg name="left_hind"
+      x="-0.01265" y="0.006" side="1"
+      coxa="0.006" trochanter="0.0015"
+      femur="0.013" tibia="0.0145" tarsus="0.0075"/>
+
+  <xacro:leg name="right_hind"
+      x="-0.01265" y="-0.006" side="-1"
+      coxa="0.006" trochanter="0.0015"
+      femur="0.013" tibia="0.0145" tarsus="0.0075"/>
+
+</robot>

@@ -1,0 +1,27 @@
+
+TRIPOD GAIT + INVERSE KINEMATICS
+==================================================
+
+LEFT_FORE
+Successful points: 96 / 101
+Maximum IK error (mm): 0.06025709156831381
+
+RIGHT_FORE
+Successful points: 97 / 101
+Maximum IK error (mm): 0.06025709156831258
+
+LEFT_MIDDLE
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0009644679658806578
+
+RIGHT_MIDDLE
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0009982521675739138
+
+LEFT_HIND
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0006914974649951172
+
+RIGHT_HIND
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0006908058981133289

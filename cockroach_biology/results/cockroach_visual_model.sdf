@@ -1,0 +1,52 @@
+<sdf version='1.12'>
+  <model name='biological_cockroach'>
+    <frame name='left_antenna_fixed' attached_to='head'>
+      <pose>0.001 0.001 0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name='left_antenna' attached_to='left_antenna_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_eye_fixed' attached_to='head'>
+      <pose>0.00059999999999999995 0.0011000000000000001 0.00020000000000000001 0 0 0</pose>
+    </frame>
+    <frame name='left_eye' attached_to='left_eye_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_antenna_fixed' attached_to='head'>
+      <pose>0.001 -0.001 0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name='right_antenna' attached_to='right_antenna_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_eye_fixed' attached_to='head'>
+      <pose>0.00059999999999999995 -0.0011000000000000001 0.00020000000000000001 0 0 0</pose>
+    </frame>
+    <frame name='right_eye' attached_to='right_eye_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='head_fixed' attached_to='base_link'>
+      <pose>0.0132 0 -0.00029999999999999997 0 0 0</pose>
+    </frame>
+    <frame name='head' attached_to='head_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_cercus_fixed' attached_to='base_link'>
+      <pose>-0.029000000000000001 0.0011999999999999999 -0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name='left_cercus' attached_to='left_cercus_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='pronotum_fixed' attached_to='base_link'>
+      <pose>0.0070000000000000001 0 0.00020000000000000001 0 0 0</pose>
+    </frame>
+    <frame name='pronotum' attached_to='pronotum_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_cercus_fixed' attached_to='base_link'>
+      <pose>-0.029000000000000001 -0.0011999999999999999 -0.00040000000000000002 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name='right_cercus' attached_to='right_cercus_fixed'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

@@ -1,0 +1,145 @@
+
+TRIPOD GAIT + INVERSE KINEMATICS
+==================================================
+
+LEFT_FORE
+----------------------------------------
+Successful points: 96 / 101
+Maximum IK error (mm): 0.06025709156831381
+
+FAILED TRAJECTORY POINTS:
+
+Time: 0.0 s
+Iterations: 1000
+Error: 0.06025709156831381 mm
+Target (mm): [ 6.99995958 16.00348323 -8.15581258]
+Calculated (mm): [ 6.9817064  15.96331318 -8.11477473]
+Joint angles (rad):
+  left_fore_coxa_joint: -0.426509
+  left_fore_trochanter_joint: 0.000000
+  left_fore_femur_joint: 0.099190
+  left_fore_tibia_joint: -0.650000
+  left_fore_tarsus_joint: 0.900000
+
+Time: 0.64 s
+Iterations: 1000
+Error: 0.014363667251174645 mm
+Target (mm): [-2.84619426 16.00348323 -8.15581258]
+Calculated (mm): [-2.84197137 15.99389496 -8.14598674]
+Joint angles (rad):
+  left_fore_coxa_joint: 0.414858
+  left_fore_trochanter_joint: 0.000000
+  left_fore_femur_joint: 0.103337
+  left_fore_tibia_joint: -0.650000
+  left_fore_tarsus_joint: 0.900000
+
+Time: 1.0 s
+Iterations: 1000
+Error: 0.06025709156831073 mm
+Target (mm): [ 6.99995958 16.00348323 -8.15581258]
+Calculated (mm): [ 6.9817064  15.96331318 -8.11477473]
+Joint angles (rad):
+  left_fore_coxa_joint: -0.426509
+  left_fore_trochanter_joint: 0.000000
+  left_fore_femur_joint: 0.099190
+  left_fore_tibia_joint: -0.650000
+  left_fore_tarsus_joint: 0.900000
+
+Time: 1.64 s
+Iterations: 1000
+Error: 0.014363667251177149 mm
+Target (mm): [-2.84619426 16.00348323 -8.15581258]
+Calculated (mm): [-2.84197137 15.99389496 -8.14598674]
+Joint angles (rad):
+  left_fore_coxa_joint: 0.414858
+  left_fore_trochanter_joint: 0.000000
+  left_fore_femur_joint: 0.103337
+  left_fore_tibia_joint: -0.650000
+  left_fore_tarsus_joint: 0.900000
+
+Time: 2.0 s
+Iterations: 1000
+Error: 0.06025709156830977 mm
+Target (mm): [ 6.99995958 16.00348323 -8.15581258]
+Calculated (mm): [ 6.9817064  15.96331318 -8.11477473]
+Joint angles (rad):
+  left_fore_coxa_joint: -0.426509
+  left_fore_trochanter_joint: 0.000000
+  left_fore_femur_joint: 0.099190
+  left_fore_tibia_joint: -0.650000
+  left_fore_tarsus_joint: 0.900000
+
+RIGHT_FORE
+----------------------------------------
+Successful points: 97 / 101
+Maximum IK error (mm): 0.06025709156831526
+
+FAILED TRAJECTORY POINTS:
+
+Time: 0.14 s
+Iterations: 1000
+Error: 0.014363667251172763 mm
+Target (mm): [ -2.84619426 -16.00348323  -8.15581258]
+Calculated (mm): [ -2.84197137 -15.99389496  -8.14598674]
+Joint angles (rad):
+  right_fore_coxa_joint: -0.414858
+  right_fore_trochanter_joint: -0.000000
+  right_fore_femur_joint: 0.103337
+  right_fore_tibia_joint: -0.650000
+  right_fore_tarsus_joint: 0.900000
+
+Time: 0.5 s
+Iterations: 1000
+Error: 0.06025709156831258 mm
+Target (mm): [  6.99995958 -16.00348323  -8.15581258]
+Calculated (mm): [  6.9817064  -15.96331318  -8.11477473]
+Joint angles (rad):
+  right_fore_coxa_joint: 0.426509
+  right_fore_trochanter_joint: -0.000000
+  right_fore_femur_joint: 0.099190
+  right_fore_tibia_joint: -0.650000
+  right_fore_tarsus_joint: 0.900000
+
+Time: 1.14 s
+Iterations: 1000
+Error: 0.014363667251174841 mm
+Target (mm): [ -2.84619426 -16.00348323  -8.15581258]
+Calculated (mm): [ -2.84197137 -15.99389496  -8.14598674]
+Joint angles (rad):
+  right_fore_coxa_joint: -0.414858
+  right_fore_trochanter_joint: -0.000000
+  right_fore_femur_joint: 0.103337
+  right_fore_tibia_joint: -0.650000
+  right_fore_tarsus_joint: 0.900000
+
+Time: 1.5 s
+Iterations: 1000
+Error: 0.06025709156831526 mm
+Target (mm): [  6.99995958 -16.00348323  -8.15581258]
+Calculated (mm): [  6.9817064  -15.96331318  -8.11477473]
+Joint angles (rad):
+  right_fore_coxa_joint: 0.426509
+  right_fore_trochanter_joint: 0.000000
+  right_fore_femur_joint: 0.099190
+  right_fore_tibia_joint: -0.650000
+  right_fore_tarsus_joint: 0.900000
+
+LEFT_MIDDLE
+----------------------------------------
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0009644679658806578
+
+RIGHT_MIDDLE
+----------------------------------------
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0009982521675739138
+
+LEFT_HIND
+----------------------------------------
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0006914974649951172
+
+RIGHT_HIND
+----------------------------------------
+Successful points: 101 / 101
+Maximum IK error (mm): 0.0006908058981133289

@@ -1,0 +1,756 @@
+<?xml version="1.0"?>
+<robot name="biological_cockroach" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Main body -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="-0.013 0 -0.0006"/>
+      <geometry>
+        <box size="0.032 0.0105 0.001"/>
+      </geometry>
+      <material name="dark_brown">
+        <color rgba="0.35 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Pronotum -->
+  <link name="pronotum">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0042" length="0.0008"/>
+      </geometry>
+      <material name="pronotum_brown">
+        <color rgba="0.55 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="pronotum_fixed" type="fixed">
+    <parent link="base_link"/>
+    <child link="pronotum"/>
+    <origin xyz="0.007 0 0.0002"/>
+  </joint>
+
+  <!-- Head -->
+  <link name="head">
+    <visual>
+      <geometry>
+        <box size="0.0046 0.003 0.0014"/>
+      </geometry>
+      <material name="head_brown">
+        <color rgba="0.25 0.06 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="head_fixed" type="fixed">
+    <parent link="base_link"/>
+    <child link="head"/>
+    <origin xyz="0.0132 0 -0.0003"/>
+  </joint>
+
+  <!-- Eyes -->
+  <xacro:macro name="eye" params="name y">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <sphere radius="0.00045"/>
+        </geometry>
+        <material name="black">
+          <color rgba="0.01 0.01 0.01 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${name}_fixed" type="fixed">
+      <parent link="head"/>
+      <child link="${name}"/>
+      <origin xyz="0.0006 ${y} 0.0002"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:eye name="left_eye" y="0.0011"/>
+  <xacro:eye name="right_eye" y="-0.0011"/>
+
+  <!-- Antennae -->
+  <xacro:macro name="antenna" params="name y">
+    <link name="${name}">
+      <visual>
+        <origin xyz="0.021 0 0"/>
+        <geometry>
+          <cylinder radius="0.00012" length="0.042"/>
+        </geometry>
+        <material name="antenna_black">
+          <color rgba="0.05 0.03 0.02 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${name}_fixed" type="fixed">
+      <parent link="head"/>
+      <child link="${name}"/>
+      <origin xyz="0.001 ${y} 0.0004" rpy="0 1.5708 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:antenna name="left_antenna" y="0.001"/>
+  <xacro:antenna name="right_antenna" y="-0.001"/>
+
+  <!-- Cerci -->
+  <xacro:macro name="cercus" params="name y">
+    <link name="${name}">
+      <visual>
+        <origin xyz="-0.00225 0 0"/>
+        <geometry>
+          <cylinder radius="0.0003" length="0.0045"/>
+        </geometry>
+        <material name="cerci_brown">
+          <color rgba="0.3 0.1 0.04 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${name}_fixed" type="fixed">
+      <parent link="base_link"/>
+      <child link="${name}"/>
+      <origin xyz="-0.029 ${y} -0.0004" rpy="0 1.5708 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:cercus name="left_cercus" y="0.0012"/>
+  <xacro:cercus name="right_cercus" y="-0.0012"/>
+
+  <!-- A1 reconstructed legs: transforms from anatomical_parent_transforms.csv -->
+  <!-- Segment lengths reproduce the supplied drawing at its reference pose. -->
+
+  <!-- left_fore: Coxa -->
+  <link name="left_fore_coxa">
+    <visual>
+      <origin xyz="0.00150794769472 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00301589538943 0.0012 0.0012"/>
+      </geometry>
+      <material name="left_fore_coxa_material">
+        <color rgba="0.45 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_fore_coxa_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="left_fore_coxa"/>
+    <origin xyz="0.002 0.0013 -0.0006" rpy="0.112730816759 0.0580584969796 2.19104581278"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_fore: Trochanter -->
+  <link name="left_fore_trochanter">
+    <visual>
+      <origin xyz="0.000403236903073 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.000806473806146 0.0010 0.0010"/>
+      </geometry>
+      <material name="left_fore_trochanter_material">
+        <color rgba="0.6 0.2 0.05 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_fore_trochanter_joint" type="revolute">
+    <parent link="left_fore_coxa"/>
+    <child link="left_fore_trochanter"/>
+    <origin xyz="0.00301589538943 0 0" rpy="-0.0636685094472 -0.0441098946615 -0.0967977191981"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_fore: Femur -->
+  <link name="left_fore_femur">
+    <visual>
+      <origin xyz="0.00165227116419 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00330454232837 0.0015 0.0015"/>
+      </geometry>
+      <material name="left_fore_femur_material">
+        <color rgba="0.65 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_fore_femur_joint" type="revolute">
+    <parent link="left_fore_trochanter"/>
+    <child link="left_fore_femur"/>
+    <origin xyz="0.000806473806146 0 0" rpy="-0.0610707904075 -0.108019043114 -0.762434125761"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_fore: Tibia -->
+  <link name="left_fore_tibia">
+    <visual>
+      <origin xyz="0.00142182980697 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00284365961395 0.0008 0.0008"/>
+      </geometry>
+      <material name="left_fore_tibia_material">
+        <color rgba="0.35 0.12 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_fore_tibia_joint" type="revolute">
+    <parent link="left_fore_femur"/>
+    <child link="left_fore_tibia"/>
+    <origin xyz="0.00330454232837 0 0" rpy="0.171113203006 0.34336334126 -0.333824388143"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.8" upper="1.8" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_fore: Tarsus -->
+  <link name="left_fore_tarsus">
+    <visual>
+      <origin xyz="0.00103561575886 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00207123151772 0.0006 0.0006"/>
+      </geometry>
+      <material name="left_fore_tarsus_material">
+        <color rgba="0.2 0.08 0.03 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_fore_tarsus_joint" type="revolute">
+    <parent link="left_fore_tibia"/>
+    <child link="left_fore_tarsus"/>
+    <origin xyz="0.00284365961395 0 0" rpy="-0.153177361212 -0.107498976587 0.364097192949"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_hind: Coxa -->
+  <link name="left_hind_coxa">
+    <visual>
+      <origin xyz="0.00258505319094 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00517010638188 0.0012 0.0012"/>
+      </geometry>
+      <material name="left_hind_coxa_material">
+        <color rgba="0.45 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_hind_coxa_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="left_hind_coxa"/>
+    <origin xyz="-0.01265 0.0013 -0.0006" rpy="0.112730816759 0.0580584969796 2.19104581278"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_hind: Trochanter -->
+  <link name="left_hind_trochanter">
+    <visual>
+      <origin xyz="0.00060485535461 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00120971070922 0.0010 0.0010"/>
+      </geometry>
+      <material name="left_hind_trochanter_material">
+        <color rgba="0.6 0.2 0.05 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_hind_trochanter_joint" type="revolute">
+    <parent link="left_hind_coxa"/>
+    <child link="left_hind_trochanter"/>
+    <origin xyz="0.00517010638188 0 0" rpy="-0.0636685094472 -0.0441098946615 -0.0967977191981"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_hind: Femur -->
+  <link name="left_hind_femur">
+    <visual>
+      <origin xyz="0.00625994209238 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0125198841848 0.0015 0.0015"/>
+      </geometry>
+      <material name="left_hind_femur_material">
+        <color rgba="0.65 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_hind_femur_joint" type="revolute">
+    <parent link="left_hind_trochanter"/>
+    <child link="left_hind_femur"/>
+    <origin xyz="0.00120971070922 0 0" rpy="-0.257840373517 -0.0499424573048 0.567798468376"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_hind: Tibia -->
+  <link name="left_hind_tibia">
+    <visual>
+      <origin xyz="0.00706233362636 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0141246672527 0.0008 0.0008"/>
+      </geometry>
+      <material name="left_hind_tibia_material">
+        <color rgba="0.35 0.12 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_hind_tibia_joint" type="revolute">
+    <parent link="left_hind_femur"/>
+    <child link="left_hind_tibia"/>
+    <origin xyz="0.0125198841848 0 0" rpy="1.54115785814 0.206051851694 0.272134867721"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.8" upper="1.8" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_hind: Tarsus -->
+  <link name="left_hind_tarsus">
+    <visual>
+      <origin xyz="0.00360802057921 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00721604115842 0.0006 0.0006"/>
+      </geometry>
+      <material name="left_hind_tarsus_material">
+        <color rgba="0.2 0.08 0.03 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_hind_tarsus_joint" type="revolute">
+    <parent link="left_hind_tibia"/>
+    <child link="left_hind_tarsus"/>
+    <origin xyz="0.0141246672527 0 0" rpy="-1.19948793439 -0.258423111284 0.117792060505"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_middle: Coxa -->
+  <link name="left_middle_coxa">
+    <visual>
+      <origin xyz="0.00193878989321 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00387757978641 0.0012 0.0012"/>
+      </geometry>
+      <material name="left_middle_coxa_material">
+        <color rgba="0.45 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_middle_coxa_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="left_middle_coxa"/>
+    <origin xyz="-0.0023 0.0013 -0.0006" rpy="0.112730816759 0.0580584969796 2.19104581278"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_middle: Trochanter -->
+  <link name="left_middle_trochanter">
+    <visual>
+      <origin xyz="0.000483884283688 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.000967768567375 0.0010 0.0010"/>
+      </geometry>
+      <material name="left_middle_trochanter_material">
+        <color rgba="0.6 0.2 0.05 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_middle_trochanter_joint" type="revolute">
+    <parent link="left_middle_coxa"/>
+    <child link="left_middle_trochanter"/>
+    <origin xyz="0.00387757978641 0 0" rpy="-0.0636685094472 -0.0441098946615 -0.0967977191981"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_middle: Femur -->
+  <link name="left_middle_femur">
+    <visual>
+      <origin xyz="0.00354270818019 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00708541636038 0.0015 0.0015"/>
+      </geometry>
+      <material name="left_middle_femur_material">
+        <color rgba="0.65 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_middle_femur_joint" type="revolute">
+    <parent link="left_middle_trochanter"/>
+    <child link="left_middle_femur"/>
+    <origin xyz="0.000967768567375 0 0" rpy="-0.139290354853 -0.0759741252321 0.0428057027796"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_middle: Tibia -->
+  <link name="left_middle_tibia">
+    <visual>
+      <origin xyz="0.00390384425919 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00780768851838 0.0008 0.0008"/>
+      </geometry>
+      <material name="left_middle_tibia_material">
+        <color rgba="0.35 0.12 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_middle_tibia_joint" type="revolute">
+    <parent link="left_middle_femur"/>
+    <child link="left_middle_tibia"/>
+    <origin xyz="0.00708541636038 0 0" rpy="0.573140398416 0.239013171759 0.21592210427"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.8" upper="1.8" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- left_middle: Tarsus -->
+  <link name="left_middle_tarsus">
+    <visual>
+      <origin xyz="0.00216629003137 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00433258006273 0.0006 0.0006"/>
+      </geometry>
+      <material name="left_middle_tarsus_material">
+        <color rgba="0.2 0.08 0.03 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_middle_tarsus_joint" type="revolute">
+    <parent link="left_middle_tibia"/>
+    <child link="left_middle_tarsus"/>
+    <origin xyz="0.00780768851838 0 0" rpy="-0.320801843825 0.0155888368925 0.368723374325"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_fore: Coxa -->
+  <link name="right_fore_coxa">
+    <visual>
+      <origin xyz="0.00150794769472 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00301589538943 0.0012 0.0012"/>
+      </geometry>
+      <material name="right_fore_coxa_material">
+        <color rgba="0.45 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_fore_coxa_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="right_fore_coxa"/>
+    <origin xyz="0.002 -0.0013 -0.0006" rpy="-0.112730816759 0.0580584969796 -2.19104581278"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_fore: Trochanter -->
+  <link name="right_fore_trochanter">
+    <visual>
+      <origin xyz="0.000403236903073 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.000806473806146 0.0010 0.0010"/>
+      </geometry>
+      <material name="right_fore_trochanter_material">
+        <color rgba="0.6 0.2 0.05 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_fore_trochanter_joint" type="revolute">
+    <parent link="right_fore_coxa"/>
+    <child link="right_fore_trochanter"/>
+    <origin xyz="0.00301589538943 0 0" rpy="0.0636685094472 -0.0441098946615 0.0967977191981"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_fore: Femur -->
+  <link name="right_fore_femur">
+    <visual>
+      <origin xyz="0.00165227116419 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00330454232837 0.0015 0.0015"/>
+      </geometry>
+      <material name="right_fore_femur_material">
+        <color rgba="0.65 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_fore_femur_joint" type="revolute">
+    <parent link="right_fore_trochanter"/>
+    <child link="right_fore_femur"/>
+    <origin xyz="0.000806473806146 0 0" rpy="0.0610707904075 -0.108019043114 0.762434125761"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_fore: Tibia -->
+  <link name="right_fore_tibia">
+    <visual>
+      <origin xyz="0.00142182980697 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00284365961395 0.0008 0.0008"/>
+      </geometry>
+      <material name="right_fore_tibia_material">
+        <color rgba="0.35 0.12 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_fore_tibia_joint" type="revolute">
+    <parent link="right_fore_femur"/>
+    <child link="right_fore_tibia"/>
+    <origin xyz="0.00330454232837 0 0" rpy="-0.171113203006 0.34336334126 0.333824388143"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.8" upper="1.8" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_fore: Tarsus -->
+  <link name="right_fore_tarsus">
+    <visual>
+      <origin xyz="0.00103561575886 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00207123151772 0.0006 0.0006"/>
+      </geometry>
+      <material name="right_fore_tarsus_material">
+        <color rgba="0.2 0.08 0.03 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_fore_tarsus_joint" type="revolute">
+    <parent link="right_fore_tibia"/>
+    <child link="right_fore_tarsus"/>
+    <origin xyz="0.00284365961395 0 0" rpy="0.153177361212 -0.107498976587 -0.364097192949"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_hind: Coxa -->
+  <link name="right_hind_coxa">
+    <visual>
+      <origin xyz="0.00258505319094 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00517010638188 0.0012 0.0012"/>
+      </geometry>
+      <material name="right_hind_coxa_material">
+        <color rgba="0.45 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_hind_coxa_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="right_hind_coxa"/>
+    <origin xyz="-0.01265 -0.0013 -0.0006" rpy="-0.112730816759 0.0580584969796 -2.19104581278"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_hind: Trochanter -->
+  <link name="right_hind_trochanter">
+    <visual>
+      <origin xyz="0.00060485535461 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00120971070922 0.0010 0.0010"/>
+      </geometry>
+      <material name="right_hind_trochanter_material">
+        <color rgba="0.6 0.2 0.05 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_hind_trochanter_joint" type="revolute">
+    <parent link="right_hind_coxa"/>
+    <child link="right_hind_trochanter"/>
+    <origin xyz="0.00517010638188 0 0" rpy="0.0636685094472 -0.0441098946615 0.0967977191981"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_hind: Femur -->
+  <link name="right_hind_femur">
+    <visual>
+      <origin xyz="0.00625994209238 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0125198841848 0.0015 0.0015"/>
+      </geometry>
+      <material name="right_hind_femur_material">
+        <color rgba="0.65 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_hind_femur_joint" type="revolute">
+    <parent link="right_hind_trochanter"/>
+    <child link="right_hind_femur"/>
+    <origin xyz="0.00120971070922 0 0" rpy="0.257840373517 -0.0499424573048 -0.567798468376"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_hind: Tibia -->
+  <link name="right_hind_tibia">
+    <visual>
+      <origin xyz="0.00706233362636 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0141246672527 0.0008 0.0008"/>
+      </geometry>
+      <material name="right_hind_tibia_material">
+        <color rgba="0.35 0.12 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_hind_tibia_joint" type="revolute">
+    <parent link="right_hind_femur"/>
+    <child link="right_hind_tibia"/>
+    <origin xyz="0.0125198841848 0 0" rpy="-1.54115785814 0.206051851694 -0.272134867721"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.8" upper="1.8" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_hind: Tarsus -->
+  <link name="right_hind_tarsus">
+    <visual>
+      <origin xyz="0.00360802057921 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00721604115842 0.0006 0.0006"/>
+      </geometry>
+      <material name="right_hind_tarsus_material">
+        <color rgba="0.2 0.08 0.03 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_hind_tarsus_joint" type="revolute">
+    <parent link="right_hind_tibia"/>
+    <child link="right_hind_tarsus"/>
+    <origin xyz="0.0141246672527 0 0" rpy="1.19948793439 -0.258423111284 -0.117792060505"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_middle: Coxa -->
+  <link name="right_middle_coxa">
+    <visual>
+      <origin xyz="0.00193878989321 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00387757978641 0.0012 0.0012"/>
+      </geometry>
+      <material name="right_middle_coxa_material">
+        <color rgba="0.45 0.12 0.06 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_middle_coxa_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="right_middle_coxa"/>
+    <origin xyz="-0.0023 -0.0013 -0.0006" rpy="-0.112730816759 0.0580584969796 -2.19104581278"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_middle: Trochanter -->
+  <link name="right_middle_trochanter">
+    <visual>
+      <origin xyz="0.000483884283688 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.000967768567375 0.0010 0.0010"/>
+      </geometry>
+      <material name="right_middle_trochanter_material">
+        <color rgba="0.6 0.2 0.05 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_middle_trochanter_joint" type="revolute">
+    <parent link="right_middle_coxa"/>
+    <child link="right_middle_trochanter"/>
+    <origin xyz="0.00387757978641 0 0" rpy="0.0636685094472 -0.0441098946615 0.0967977191981"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_middle: Femur -->
+  <link name="right_middle_femur">
+    <visual>
+      <origin xyz="0.00354270818019 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00708541636038 0.0015 0.0015"/>
+      </geometry>
+      <material name="right_middle_femur_material">
+        <color rgba="0.65 0.25 0.08 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_middle_femur_joint" type="revolute">
+    <parent link="right_middle_trochanter"/>
+    <child link="right_middle_femur"/>
+    <origin xyz="0.000967768567375 0 0" rpy="0.139290354853 -0.0759741252321 -0.0428057027796"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_middle: Tibia -->
+  <link name="right_middle_tibia">
+    <visual>
+      <origin xyz="0.00390384425919 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00780768851838 0.0008 0.0008"/>
+      </geometry>
+      <material name="right_middle_tibia_material">
+        <color rgba="0.35 0.12 0.04 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_middle_tibia_joint" type="revolute">
+    <parent link="right_middle_femur"/>
+    <child link="right_middle_tibia"/>
+    <origin xyz="0.00708541636038 0 0" rpy="-0.573140398416 0.239013171759 -0.21592210427"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.8" upper="1.8" effort="1" velocity="2"/>
+  </joint>
+
+  <!-- right_middle: Tarsus -->
+  <link name="right_middle_tarsus">
+    <visual>
+      <origin xyz="0.00216629003137 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.00433258006273 0.0006 0.0006"/>
+      </geometry>
+      <material name="right_middle_tarsus_material">
+        <color rgba="0.2 0.08 0.03 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_middle_tarsus_joint" type="revolute">
+    <parent link="right_middle_tibia"/>
+    <child link="right_middle_tarsus"/>
+    <origin xyz="0.00780768851838 0 0" rpy="0.320801843825 0.0155888368925 -0.368723374325"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.2" upper="1.2" effort="1" velocity="2"/>
+  </joint>
+
+
+</robot>
